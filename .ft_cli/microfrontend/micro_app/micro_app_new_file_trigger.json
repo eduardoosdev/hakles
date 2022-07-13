@@ -1,0 +1,16 @@
+[
+    {
+        "pathFile": "{{projectNameComplete}}\\assets\\lang\\pt_BR",
+        "pathTemplete": ".ft_cli/microfrontend/micro_app/micro_app_new_file_exemple.template",
+        "extension": "json",
+        "generate": true,
+        "replaceOldFileWithNew": false
+    },
+    {
+        "pathFile": "{{projectNameComplete}}\\pubspec",
+        "pathTemplete": ".ft_cli/microfrontend/micro_app/micro_app_pubspec.templete",
+        "extension": "yaml",
+        "generate": true,
+        "replaceOldFileWithNew": true
+    }
+]

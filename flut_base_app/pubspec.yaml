@@ -1,0 +1,59 @@
+name: flut_base_app
+description: Flutter Base App Hakles
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  platform: ^3.1.0
+  flut_micro_commons_dependencies:
+    path: '../flut_micro_commons_dependencies'
+  flut_micro_app_home:
+    path: '../flut_micro_app_home'
+  flut_micro_commons_shared:
+    path: '../flut_micro_commons_shared'
+  flut_micro_commons_auth:
+    path: '../flut_micro_commons_auth'
+  flut_micro_app_onboarding:
+    path: '../flut_micro_app_onboarding'
+  flut_micro_app_profile:
+    path: '../flut_micro_app_profile'
+  flut_micro_app_register_shop:
+    path: '../flut_micro_app_register_shop'
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - packages/flut_micro_app_home/assets/lang/
+    - packages/flut_micro_app_profile/assets/lang/
+
+
+vars: 
+  clean: flutter clean
+  get: flutter pub get
+  runner: flutter pub run build_runner
+  repair: flutter pub cache repair
+scripts: 
+  get: $clean & $get
+  mobx_build: flutter pub run build_runner build --delete-conflicting-outputs
+  mobx_watch: flutter pub run build_runner watch --delete-conflicting-outputs
+  flutter_refresh: $repair & $clean & $get & $runner watch --delete-conflicting-outputs
+  lang: flutter pub run gen_lang:generate
+  build_apk_dev: flutter build apk --flavor dev lib/main-dev.dart
+  build_apk_hom: flutter build apk --flavor hom lib/main-hom.dart
+  build_apk_prd: flutter build apk --flavor prd lib/main-prd.dart
+  build_appbundle_dev: flutter build appbundle --flavor dev lib/main-dev.dart
+  build_appbundle_hom: flutter build appbundle --flavor hom lib/main-hom.dart
+  build_appbundle_prd: flutter build appbundle --flavor prd lib/main-prd.dart
+
+  build_run_ios: flutter build ios --no-codesign --flavor dev lib/main-dev.dart

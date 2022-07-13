@@ -1,0 +1,34 @@
+name: flut_micro_app_home
+description: Flutter Micro App Home
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  hakles_designer_system:
+    path: "../hakles_designer_system"
+  flut_micro_commons_dependencies:
+    path: '../flut_micro_commons_dependencies'
+  flut_micro_commons_shared:
+    path: '../flut_micro_commons_shared'
+  flut_micro_commons_auth:
+    path: '../flut_micro_commons_auth'
+  flut_micro_commons_persist_firebase:
+    path: '../flut_micro_commons_persist_firebase'
+dev_dependencies:
+  build_runner: ^2.1.1
+  modular_codegen: ^3.0.0
+  modular_test: ^1.0.1+1
+  mobx_codegen: ^2.0.2
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/lang/
+
+localizationDir: assets/lang
